@@ -1,0 +1,324 @@
+@charset "utf-8";
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  vertical-align: baseline;
+  font: inherit;
+  font-size: 100%;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+}
+
+em { font-style: italic; }
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================== */
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/*for all*/
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a { 
+  display: inline-block;
+  text-decoration: none; 
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1360px;
+  width: 86%; 
+  margin: 0 auto;
+}
+/*=================================
+  Header styling starts here
+=================================*/
+header { 
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #524f4f; 
+}
+
+header .wrapper {
+  padding: 10px 0; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart a {
+  padding: 10px 15px;
+  font: bold 30px sans-serif;
+  color: #fff;
+  border: 1px solid #ccc;
+}
+
+.cart a:before {
+  content: "\f07a";
+  float: left;
+  color: #ccc;
+  font-family: "Font Awesome 5 Free";
+  font-size: 30px;
+  font-weight: 900;
+  text-indent: 0;
+}
+/*=================================
+  Header styling ends here
+=================================*/  
+
+/*=================================
+  main styling starts here
+=================================*/
+.products { 
+  padding: 100px 0 50px; 
+  background: #e8e8e8;
+}
+
+.product-block {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.product-block li {
+  border: 1px solid #000;
+  border-bottom: none;
+  margin: 10px;
+  position: relative;
+}
+
+.product-image { 
+  padding-top: 37px; 
+  overflow: hidden; 
+}
+
+.product-image img { max-height: 200px;}
+
+.product-image img {
+  -webkit-transition: .2s transform ease-in;
+  -o-transition: .2s transform ease-in;
+  transition: .2s transform ease-in;
+}
+
+.product-block li:hover img { 
+  -webkit-transform: scale(1.4); 
+  -ms-transform: scale(1.4); 
+  transform: scale(1.4);
+}
+
+.product-text {
+  min-height: 110px;
+  padding-top: 10px;
+  border-top: 1px solid #000;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.title {
+  color: #333;
+  font: bold 22px serif;
+}
+
+.style {
+  color: #924e4e;
+  font-size: 14px;
+}
+
+.add-to-cart,
+.price {
+  width: 100%;
+  border: none;
+  position: absolute;
+  left: 0;
+  background: #a92837;
+  color: #ccc;
+  font: bold 12px sans-serif;
+}
+
+.add-to-cart {
+  padding: 10px 0; 
+  bottom: 0; 
+}
+
+.price { 
+  padding: 5px 0;
+  top: 0; 
+  background: #fff; 
+  color:#a92837; 
+  font: bold 22px sans-serif;
+}
+
+footer {
+  padding: 30px 0;
+  background: #524f4f;
+  color: #fff;
+  text-align: center;
+}
+
+footer span{ 
+  color: lavender;
+  font-weight: bold;
+}
+
+/* cart styling start */
+.cart-block {
+  max-width: 350px;
+  margin: 20px  0 5px 0;
+  background: #ccc;
+}
+
+.cart-block li {
+  padding: 10px;
+  border: 1px solid #000;
+  display: block; 
+}
+
+.cart-price {
+  padding-top: 5px;
+  display: block;
+  color:#a92837; 
+  font: bold 18px sans-serif;
+}
+
+.total-block {
+  margin-bottom: 10px;
+  color: #ff0000;
+  font: bold 25px sans-serif;
+}
+
+.cart-error-container {
+  display: inline-block;
+  margin-top: 20px;
+  min-height: 250px;
+  border: 1px solid #000;
+  background:  #e8e8e8;
+}
+
+.cart-error-img {
+  max-width: 250px;
+  min-height: 150px;
+  display: inline-block;
+}
+
+.cart-error-msg {
+  padding: 0 30px;
+  color: #ff0000;
+  font-size: 30px;
+  display: inline-block;
+}
+
+.cart-products a { display: block ;}
+
+.cart-products button {
+  margin-top: 10px;
+  padding: 7px 10px;
+  border: 1px solid transparent;
+  background: #a92837;
+  color: #fff;
+  font-size: 18px;
+  transition: .3s all ease-in;
+}
+
+.cart-products button:hover { 
+  background: #fff;
+  color: #a92837;
+  border: 1px solid #a92837;
+}
+/* cart styling end*/
+
+/*=================================
+  main styling ends here
+=================================*/
+
+@media screen and (max-width: 995px) {
+
+  .cart-products { text-align: center;}
+  .cart-error-msg {
+    padding-top: 10px; 
+    font-size: 18px; 
+  }
+
+  .cart-error-container {
+    padding: 10px 0;
+    border: none;
+    background: transparent;
+    display: block;
+  }
+
+}
